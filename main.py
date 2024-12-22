@@ -46,7 +46,7 @@ def alter_prompt(prompt: list[llm_entities.Message], user_name: str):
 
 # 创建数据文件夹
 def create_data_dir():
-    base_path = "data/plugins/SillyTavernPlugin"
+    base_path = "plugins/SillyTavernPlugin"
     # 在base_path下创建文件夹characters_cards
     os.makedirs(base_path, exist_ok=True)
     os.makedirs(base_path + "/characters_cards", exist_ok=True)
@@ -57,7 +57,7 @@ def create_data_dir():
 
 # 角色卡处理
 def silly_tavern_process():
-    stp = SillyTavernProcessor('data/plugins/SillyTavernPlugin/characters_cards',
+    stp = SillyTavernProcessor('plugins/SillyTavernPlugin/characters_cards',
                                'data/scenario')
     result = stp.process_png_files()
     print("SillyTavernPlugin插件处理完成")
